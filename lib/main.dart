@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oks/contants.dart';
 import 'package:oks/views/sign_in.dart';
 
 void main() {
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'OKS',
+      debugShowCheckedModeBanner: false,
+      title: 'My Community',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: PrimaryColor,
       ),
       home: SignIn(),
     );
