@@ -12,6 +12,10 @@ class TextfieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => TextField(
+    keyboardType: TextInputType.multiline,
+    textInputAction: TextInputAction.newline,
+    minLines: 1,
+    maxLines: 5,
     controller: controller,
     style: TextStyle(
       color: Colors.black,

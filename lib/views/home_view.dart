@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
 import 'package:oks/models/news_feed.dart';
+import 'package:oks/views/report_issue_view.dart';
+import 'package:oks/widgets/bottom_navbar_widget.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -14,7 +16,6 @@ class _HomeViewState extends State<HomeView> {
   
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _getNewsFeed = getNewsFeed();
   }
@@ -27,8 +28,15 @@ class _HomeViewState extends State<HomeView> {
         leading: Icon(Icons.account_circle,size:30,color: Colors.white,),
         title: Text("My Community"),
       ),
-      bottomNavigationBar:buildBottomNav(context),
+      bottomNavigationBar:BottomNavBottom(),
       body:buildContentList(context),
+      floatingActionButton:  FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ReportIssueView()));
+        },
+        child: const Icon(Icons.edit,color: White,),
+        backgroundColor: Black,
+      ),
     );
   }
 
@@ -88,6 +96,7 @@ class _HomeViewState extends State<HomeView> {
                     },
                   ),
                 ),
+
               ],
             );
           }else{
@@ -108,41 +117,8 @@ class _HomeViewState extends State<HomeView> {
         });
   }
 
-  Widget buildBottomNav(BuildContext context){
-    return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-          backgroundColor:PrimaryColor,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.notifications_none_outlined),
-          label: 'Notifications',
-          backgroundColor:PrimaryColor,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.payments_outlined),
-          label: 'Bills',
-          backgroundColor:PrimaryColor,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.history),
-          label: 'Issues log',
-          backgroundColor:PrimaryColor,
-        ),
-      ],
-    );
-  }
-
   Future<List<dynamic>> getNewsFeed() async {
     newsFeedItems = [];
-    // Map<String, dynamic> result = await getPushNotifications(userAuthCode,"");
-    // var itemList = result['notifications']['edges'] as List<dynamic>;
-    // addNewsFeeds(itemList);
-    // if (newsFeedItems == null) {
-    //   return null;
-    // }
     for (int i = 0; i < 10; i++) {
       newsFeedItems.add(NewsFeed(id: "Id $i", title: "Title $i", description: "Description $i", url: "Image $i"));
     }
