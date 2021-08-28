@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
 import 'package:oks/models/news_feed.dart';
-import 'package:oks/views/report_issue_view.dart';
-import 'package:oks/widgets/bottom_navbar_widget.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -22,25 +20,6 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: PrimaryColor,
-        leading: Icon(Icons.account_circle,size:30,color: Colors.white,),
-        title: Text("My Community"),
-      ),
-      bottomNavigationBar:BottomNavBottom(),
-      body:buildContentList(context),
-      floatingActionButton:  FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ReportIssueView()));
-        },
-        child: const Icon(Icons.edit,color: White,),
-        backgroundColor: Black,
-      ),
-    );
-  }
-
-  Widget buildContentList(BuildContext context){
     return FutureBuilder(
         future: _getNewsFeed,
         builder: (context, snapshot) {
@@ -89,7 +68,6 @@ class _HomeViewState extends State<HomeView> {
                           subtitle: Text(newsFeedItem.description.toString(),
                               style: TextStyle(
                                   fontFamily: 'Sora', color: PrimaryColor)),
-                          // trailing: Text(newsFeedItem.sendTime.toString(),style: TextStyle(color: kDarkBlackColor,fontSize: 10.0),),
                           leading: Image.asset(LogoPath),
                         ),
                       );

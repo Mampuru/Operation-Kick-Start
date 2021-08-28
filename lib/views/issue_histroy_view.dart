@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
 import 'package:oks/models/news_feed.dart';
-import 'package:oks/views/report_issue_view.dart';
-import 'package:oks/widgets/bottom_navbar_widget.dart';
 
 class IssueHistoryView extends StatefulWidget {
   @override
@@ -22,26 +20,7 @@ class _IssueHistoryViewState extends State<IssueHistoryView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: PrimaryColor,
-        leading: Icon(Icons.account_circle,size:30,color: Colors.white,),
-        title: Text("Logged Issues"),
-      ),
-      bottomNavigationBar:BottomNavBottom(),
-      body:buildContentList(context),
-      floatingActionButton:  FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ReportIssueView()));
-        },
-        child: const Icon(Icons.edit,color: White,),
-        backgroundColor: Black,
-      ),
-    );
-  }
-
-  Widget buildContentList(BuildContext context){
-   return FutureBuilder(
+    return FutureBuilder(
         future: _getNewsFeed,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
@@ -115,7 +94,6 @@ class _IssueHistoryViewState extends State<IssueHistoryView> {
 
         });
   }
-
 
   Future<List<dynamic>> getNewsFeed() async {
     newsFeedItems = [];

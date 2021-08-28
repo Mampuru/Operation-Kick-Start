@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
-import 'package:oks/views/home_view.dart';
+import 'package:oks/views/main_view.dart';
 import 'package:oks/widgets/button_widget.dart';
 import 'package:oks/widgets/textfield_widget.dart';
 
@@ -25,7 +25,7 @@ class ProfileInfo extends StatelessWidget {
                 Text("Residential Location",style: TextStyle(color: Black,fontSize: TitleText),),
                 SizedBox(height: 40.0,),
                 ButtonWidget(buttonName: "Use Current Location", onTap: () => {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView()))
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainView()))
                 }),
                 SizedBox(height: 10.0,),
                 Text('OR'),
@@ -39,7 +39,7 @@ class ProfileInfo extends StatelessWidget {
                 TextfieldWidget(controller: province, label: "Province"),
                 SizedBox(height: 10.0,),
                 ButtonWidget(buttonName: "Save", onTap: () => {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView()))
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MainView()))
                 })
               ],
             ),
