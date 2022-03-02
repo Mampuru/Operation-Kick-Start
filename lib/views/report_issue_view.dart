@@ -1,14 +1,15 @@
 
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:oks/contants.dart';
 import 'package:oks/views/issue_histroy_view.dart';
 import 'package:oks/widgets/button_widget.dart';
 import 'package:oks/widgets/textfield_widget.dart';
+import 'package:intl/intl.dart';
 
 class ReportIssueView extends StatefulWidget {
   @override
@@ -18,6 +19,10 @@ class ReportIssueView extends StatefulWidget {
 class _ReportIssueViewState extends State<ReportIssueView> {
   final issue = TextEditingController();
   File? image;
+  var _formatted;
+
+  final GeolocatorPlatform geolocator = GeolocatorPlatform.instance;
+  late Position _currentPosition;
 
   @override
   Widget build(BuildContext context) {
@@ -76,5 +81,38 @@ class _ReportIssueViewState extends State<ReportIssueView> {
       print("Failed to capture image: $e");
     }
 
+  }
+
+  getDate() async {
+    final DateTime now = DateTime.now();
+    final DateFormat formatter = DateFormat("yyyy-MM-dd hh:mm");
+    final String formatted = formatter.format(now);
+    setState(() {
+      _formatted = formatted;
+    });
+  }
+
+  determinePosition() async {
+    LocationPermission permission;
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }
+    try {
+      var position = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.high);
+      
+      return position;
+    } catch (e) {
+      print(e);
+    }
   }
 }
