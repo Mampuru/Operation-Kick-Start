@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
 //Colors
-const PrimaryColor =  Colors.grey;
+const PrimaryColor =  Colors.blue;
 const White = Colors.white;
 const Black =  Colors.black;
 
@@ -15,7 +15,7 @@ const TitleText = 30.0;
 const ButtonText = 20.0;
 
 //Image
-const LogoPath = "assets/logo/d_logo.png";
+const LogoPath = "assets/logo/logo.png";
 
 //Logger
 var logger = Logger(printer: PrettyPrinter(),);

@@ -14,7 +14,7 @@ class SignIn extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(LogoPath),
+              SizedBox(height:150,width: 150,child: Image.asset(LogoPath)),
               SizedBox(height: 40.0,),
               ButtonWidget(buttonName: "Gmail",onTap: () => {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileInfo()))
