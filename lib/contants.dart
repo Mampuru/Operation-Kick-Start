@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:oks/colors/primaryBlue.dart';
 
 //Colors
-const PrimaryColor =  Colors.blue;
+const PrimaryColor =  primaryblue;
 const White = Colors.white;
 const Black =  Colors.black;
+
 
 //String
 const LandingViewText = "How much burgers would you like ?";
@@ -16,6 +18,7 @@ const ButtonText = 20.0;
 
 //Image
 const LogoPath = "assets/logo/logo.png";
+const LandingIconPath = "assets/logo/landing_screen.png";
 
 //Logger
 var logger = Logger(printer: PrettyPrinter(),);

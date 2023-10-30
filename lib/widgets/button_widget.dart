@@ -15,7 +15,7 @@ class ButtonWidget extends StatelessWidget {
     required this.onTap,
     this.margin: const EdgeInsets.all(0.0),
     this.buttonColor: PrimaryColor,
-    this.textColor: Black,
+    this.textColor: White,
     this.width:250.0,
     this.height:60.0,
   });
