@@ -16,7 +16,7 @@ class ButtonWidget extends StatelessWidget {
     this.margin: const EdgeInsets.all(0.0),
     this.buttonColor: PrimaryColor,
     this.textColor: White,
-    this.width:250.0,
+    this.width:300.0,
     this.height:60.0,
   });
 
@@ -28,7 +28,7 @@ class ButtonWidget extends StatelessWidget {
         child: ElevatedButton(
             onPressed: onTap,
             child: Text(buttonName,style: TextStyle(color: textColor,fontSize: ButtonText),),
-            style: ElevatedButton.styleFrom(primary: buttonColor)
+            style: ElevatedButton.styleFrom(backgroundColor: buttonColor,)
         ),
       ),
     );
