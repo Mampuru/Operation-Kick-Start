@@ -28,11 +28,17 @@ class _ReportIssueViewState extends State<ReportIssueView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Log Issue"),
-        backgroundColor: PrimaryColor,
-        leading: IconButton(icon: Icon(Icons.arrow_back_outlined,size:30,color: Colors.white),onPressed: () => {
+        centerTitle: true,
+        title: Text("Log Issue",style: TextStyle(color: Black,fontWeight: FontWeight.bold),),
+        backgroundColor: White,
+        leading: IconButton(icon: Icon(Icons.arrow_back_outlined,size:30,color: Black),onPressed: () => {
           Navigator.pop(context)
-        },),
+        },
+        ),
+        actions: [Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(Icons.account_circle,size:30,color: Black,),
+        ),],
       ),
       body:SingleChildScrollView(child: buildContent(context)),
     );
@@ -48,7 +54,7 @@ class _ReportIssueViewState extends State<ReportIssueView> {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
-              color: PrimaryColor,
+              color: Gray,
               height: MediaQuery.of(context).size.height/2,
               width: MediaQuery.of(context).size.width,
               child: image != null ? Image.file(image!) : Icon(Icons.camera_alt,size: 50.0,)
@@ -60,7 +66,7 @@ class _ReportIssueViewState extends State<ReportIssueView> {
           padding: const EdgeInsets.fromLTRB(16,0,16,0),
           child: TextfieldWidget(controller: issue, label: "Brief Description",),
         ),
-        SizedBox(height: 10.0,),
+        SizedBox(height: 50.0,),
         ButtonWidget(buttonName: "Log Issue",width: 320, onTap: () => {
           Navigator.push(context, MaterialPageRoute(builder: (context) => IssueHistoryView()))
         })

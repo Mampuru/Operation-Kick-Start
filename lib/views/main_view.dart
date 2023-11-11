@@ -22,10 +22,13 @@ class _MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: PrimaryColor,
-        leading: Icon(Icons.account_circle,size:30,color: Colors.white,),
-        title: Text('My Community'),
+        backgroundColor: White,
+        title: Text('My Community',style: TextStyle(color: Black,fontWeight: FontWeight.bold),),
         centerTitle: true,
+        actions: [Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(Icons.account_circle,size:30,color: Black,),
+        ),],
       ),
       body: screens[currentIndex],
       bottomNavigationBar: buildBottomNav(),
@@ -41,28 +44,25 @@ class _MainViewState extends State<MainView> {
 
   Widget buildBottomNav(){
     return BottomNavigationBar(
+      backgroundColor: White,
       currentIndex: currentIndex,
       onTap: (index) => setState(() => currentIndex = index),
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.home,color: Black,),
           label: 'Home',
-          backgroundColor:PrimaryColor,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications_none_outlined),
+          icon: Icon(Icons.notifications_none_outlined,color: Gray,),
           label: 'Notifications',
-          backgroundColor:PrimaryColor,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.payments_outlined),
+          icon: Icon(Icons.payments_outlined,color: Gray,),
           label: 'Bills',
-          backgroundColor:PrimaryColor,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.history),
+          icon: Icon(Icons.history,color: Gray,),
           label: 'Issues log',
-          backgroundColor:PrimaryColor,
         ),
       ],
     );

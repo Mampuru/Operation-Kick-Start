@@ -6,6 +6,7 @@ import 'package:oks/colors/primaryBlue.dart';
 const PrimaryColor =  primaryblue;
 const White = Colors.white;
 const Black =  Colors.black;
+const Gray = Colors.black12;
 
 
 //String

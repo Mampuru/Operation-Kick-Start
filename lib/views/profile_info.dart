@@ -24,7 +24,7 @@ class ProfileInfo extends StatelessWidget {
               children: [
                 Text("Residential Location",style: TextStyle(color: Black,fontSize: TitleText),),
                 SizedBox(height: 40.0,),
-                ButtonWidget(buttonName: "Use Current Location", onTap: () => {
+                ButtonWidget(buttonName: "Use Current Location",buttonColor: White,textColor: Black, onTap: () => {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => MainView()))
                 }),
                 SizedBox(height: 10.0,),
@@ -37,7 +37,7 @@ class ProfileInfo extends StatelessWidget {
                 TextfieldWidget(controller: city, label: "City"),
                 SizedBox(height: 10.0,),
                 TextfieldWidget(controller: province, label: "Province"),
-                SizedBox(height: 10.0,),
+                SizedBox(height: 50.0,),
                 ButtonWidget(buttonName: "Save", onTap: () => {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => MainView()))
                 })
