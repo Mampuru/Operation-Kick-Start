@@ -20,6 +20,8 @@ const ButtonText = 20.0;
 //Image
 const LogoPath = "assets/logo/logo.png";
 const LandingIconPath = "assets/logo/landing_screen.png";
+const defaultIcon = "assets/logo/profile-user.png";
+
 
 //Logger
 var logger = Logger(printer: PrettyPrinter(),);
