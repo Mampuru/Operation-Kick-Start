@@ -4,6 +4,7 @@ import 'package:oks/views/profile_info.dart';
 import 'package:oks/widgets/button_widget.dart';
 
 import '../widgets/textfield_widget.dart';
+import 'main_view.dart';
 
 class SignIn extends StatelessWidget {
   final email = TextEditingController();
@@ -40,7 +41,7 @@ class SignIn extends StatelessWidget {
                   buttonColor: White,
                   textColor: Black,
                   onTap: () => {
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileInfo()))
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainView()))
                   },
                 ),
                 SizedBox(
@@ -74,7 +75,7 @@ class SignIn extends StatelessWidget {
                         return AlertDialog(
                           title: Center(child: Text('Sign Up',style: TextStyle(fontWeight: FontWeight.bold),)),
                           content: SizedBox(
-                            width: 400,
+                            width: 500,
                             child: SingleChildScrollView(
                               child: Column(
                                 children: <Widget>[
@@ -90,19 +91,31 @@ class SignIn extends StatelessWidget {
                             ),
                           ),
                           actions: <Widget>[
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('Cancel'),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Add your login logic here
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileInfo()));
-                              },
-                              child: Text('Sign Up'),
-                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    minimumSize: Size(120, 50), // Set minimum button size (width, height)
+                                  ),
+                                  child: Text('Cancel',style: TextStyle(color: Colors.red)),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    // Add your login logic here
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileInfo()));
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: PrimaryColor, // Set button color to red
+                                    minimumSize: Size(120, 50), // Set minimum button size (width, height)
+                                  ),
+                                  child: Text('Sign Up',style: TextStyle(color: White),),
+                                ),
+                              ],
+                            )
                           ],
                         );
                       },
