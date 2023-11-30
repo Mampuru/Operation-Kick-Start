@@ -30,13 +30,13 @@ class ProfileInfo extends StatelessWidget {
                 SizedBox(height: 10.0,),
                 Text('OR'),
                 SizedBox(height: 10.0,),
-                TextfieldWidget(controller: street, label: "Street Name"),
+                TextFieldWidget(controller: street, label: "Street Name"),
                 SizedBox(height: 10.0,),
-                TextfieldWidget(controller: suburb, label: "Suburb"),
+                TextFieldWidget(controller: suburb, label: "Suburb"),
                 SizedBox(height: 10.0,),
-                TextfieldWidget(controller: city, label: "City"),
+                TextFieldWidget(controller: city, label: "City"),
                 SizedBox(height: 10.0,),
-                TextfieldWidget(controller: province, label: "Province"),
+                TextFieldWidget(controller: province, label: "Province"),
                 SizedBox(height: 50.0,),
                 ButtonWidget(buttonName: "Save", onTap: () => {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => MainView()))

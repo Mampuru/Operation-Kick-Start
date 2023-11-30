@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -64,7 +63,7 @@ class _ReportIssueViewState extends State<ReportIssueView> {
         SizedBox(height: 10.0,),
         Padding(
           padding: const EdgeInsets.fromLTRB(16,0,16,0),
-          child: TextfieldWidget(controller: issue, label: "Brief Description",),
+          child: TextFieldWidget(controller: issue, label: "Brief Description",),
         ),
         SizedBox(height: 50.0,),
         ButtonWidget(buttonName: "Log Issue",width: 320, onTap: () => {
