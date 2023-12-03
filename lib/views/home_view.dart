@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
-import 'package:oks/models/news_feed.dart';
+import 'package:oks/models/news_feed_model.dart';
 import 'package:oks/widgets/card_widget.dart';
 
 class HomeView extends StatefulWidget {

@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
-import 'package:oks/models/news_feed.dart';
+import 'package:oks/models/news_feed_model.dart';
 
 class IssueHistoryView extends StatefulWidget {
   @override
