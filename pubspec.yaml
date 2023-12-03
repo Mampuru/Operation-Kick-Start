@@ -42,6 +42,7 @@ dependencies:
 
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.2.19
+  get: ^4.6.6
 
 
 dev_dependencies:
