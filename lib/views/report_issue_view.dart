@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:oks/contants.dart';
+import 'package:oks/views/edit_profile_view.dart';
 import 'package:oks/views/issue_histroy_view.dart';
 import 'package:oks/widgets/button_widget.dart';
 import 'package:oks/widgets/textfield_widget.dart';
@@ -36,7 +37,9 @@ class _ReportIssueViewState extends State<ReportIssueView> {
         ),
         actions: [Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Icon(Icons.account_circle,size:30,color: Black,),
+          child: IconButton(icon: Icon(Icons.account_circle,size:30,color: Black,),onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfileView()));
+          },)
         ),],
       ),
       body:SingleChildScrollView(child: buildContent(context)),
