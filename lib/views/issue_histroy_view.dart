@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
 import 'package:oks/models/news_feed_model.dart';
 
+import '../widgets/card_widget.dart';
+
 class IssueHistoryView extends StatefulWidget {
   @override
   _IssueHistoryViewState createState() => _IssueHistoryViewState();
@@ -39,37 +41,12 @@ class _IssueHistoryViewState extends State<IssueHistoryView> {
                     itemCount: newsFeedItems.length,
                     itemBuilder: (BuildContext context, int index) {
                       final newsFeedItem = newsFeedItems[index];
-                      return Card(
-                        elevation: 1,
-                        child: ListTile(
-                          onTap: () {
-                            showDialog(context: context, builder: (_) {
-                              return AlertDialog(
-                                title: Text(newsFeedItem.title),
-                                content: SingleChildScrollView(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment
-                                        .start,
-                                    children: [
-                                      Text(newsFeedItem.description)
-                                    ],
-                                  ),
-                                ),
-                              );
-                            });
-                          },
-                          title: Text(
-                            newsFeedItem.title.toString(),
-                            style: TextStyle(
-                                color: Black,
-                                fontFamily: 'Sora',
-                                fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: Text(newsFeedItem.description.toString(),
-                              style: TextStyle(
-                                  fontFamily: 'Sora', color: PrimaryColor)),
-                          leading: Image.asset(LogoPath),
-                        ),
+                      return CardWidget(
+                        userIcon: defaultIcon,
+                        title: newsFeedItem.title.toString(),
+                        timeLogged: "17h ago",
+                        issueImage: community,
+                        description:newsFeedItem.description.toString(),
                       );
                     },
                   ),
@@ -98,7 +75,11 @@ class _IssueHistoryViewState extends State<IssueHistoryView> {
   Future<List<dynamic>> getNewsFeed() async {
     newsFeedItems = [];
     for (int i = 0; i < 10; i++) {
-      newsFeedItems.add(NewsFeed(id: "Id $i", title: "Title $i", description: "Description $i", url: "Image $i"));
+      newsFeedItems.add(
+          NewsFeed(id: "Id $i",
+              title: "TITLE OF THE ISSUE $i",
+              description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+              url: "Image $i"));
     }
     return newsFeedItems;
   }

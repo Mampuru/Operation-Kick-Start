@@ -44,7 +44,7 @@ class _HomeViewState extends State<HomeView> {
                         userIcon: defaultIcon,
                         title: newsFeedItem.title.toString(),
                         timeLogged: "17h ago",
-                        issueImage: LogoPath,
+                        issueImage: potholes,
                         description:newsFeedItem.description.toString(),
                       );
                     },

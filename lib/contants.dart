@@ -21,6 +21,8 @@ const ButtonText = 20.0;
 const LogoPath = "assets/logo/logo.png";
 const LandingIconPath = "assets/logo/landing_screen.png";
 const defaultIcon = "assets/logo/profile-user.png";
+const community = "assets/logo/community.jpg";
+const potholes = "assets/logo/potholes.jpg";
 
 
 //Logger
