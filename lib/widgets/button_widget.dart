@@ -13,11 +13,11 @@ class ButtonWidget extends StatelessWidget {
   ButtonWidget({
     required this.buttonName,
     required this.onTap,
-    this.margin: const EdgeInsets.all(0.0),
-    this.buttonColor: PrimaryColor,
-    this.textColor: White,
-    this.width:300.0,
-    this.height:60.0,
+    this.margin = const EdgeInsets.all(0.0),
+    this.buttonColor= PrimaryColor,
+    this.textColor= White,
+    this.width=300.0,
+    this.height=60.0,
   });
 
   @override
