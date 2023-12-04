@@ -33,15 +33,22 @@ class EditProfileView extends StatelessWidget {
     final name = TextEditingController();
     final location = TextEditingController();
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        TextFieldWidget(controller: name, label: 'Admin Admin',),
-        TextFieldWidget(controller: email, label: 'admin@gmail.com',),
-        TextFieldWidget(controller: location, label: '293 Dove Ave Cape Town',),
-        TextFieldWidget(controller: password, label: 'rock_and_roll',obscureText: true,),
-        ButtonWidget(buttonName: 'Edit', onTap: () {  },)
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          TextFieldWidget(controller: name, label: 'Admin Admin',),
+          SizedBox(height: 10,),
+          TextFieldWidget(controller: email, label: 'admin@gmail.com',),
+          SizedBox(height: 10,),
+          TextFieldWidget(controller: location, label: '293 Dove Ave Cape Town',),
+          SizedBox(height: 10,),
+          TextFieldWidget(controller: password, label: 'rock_and_roll',obscureText: true,),
+          SizedBox(height: 50,),
+          ButtonWidget(buttonName: 'Edit', onTap: () {  },)
+        ],
+      ),
     );
   }
 }
