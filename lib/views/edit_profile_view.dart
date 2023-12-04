@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../contants.dart';
+import '../widgets/button_widget.dart';
 import '../widgets/textfield_widget.dart';
 
 class EditProfileView extends StatelessWidget {
   const EditProfileView({Key? key}) : super(key: key);
 
-  get name => null;
-  get email => null;
-  get location => null;
-  get password => null;
-
   @override
   Widget build(BuildContext context) {
-    final email = TextEditingController();
-    final password = TextEditingController();
-    final name = TextEditingController();
-    final location = TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -37,12 +28,19 @@ class EditProfileView extends StatelessWidget {
   }
 
   Widget buildContent(BuildContext context) {
+    final email = TextEditingController();
+    final password = TextEditingController();
+    final name = TextEditingController();
+    final location = TextEditingController();
+
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         TextFieldWidget(controller: name, label: 'Admin Admin',),
         TextFieldWidget(controller: email, label: 'admin@gmail.com',),
         TextFieldWidget(controller: location, label: '293 Dove Ave Cape Town',),
         TextFieldWidget(controller: password, label: 'rock_and_roll',obscureText: true,),
+        ButtonWidget(buttonName: 'Edit', onTap: () {  },)
       ],
     );
   }
