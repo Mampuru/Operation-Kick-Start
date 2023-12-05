@@ -31,7 +31,7 @@ class SignIn extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: TextFieldWidget(controller: password, label: 'Password',),
+                  child: TextFieldWidget(controller: password, label: 'Password',obscureText: true,),
                 ),
                 SizedBox(
                   height: 30.0,
