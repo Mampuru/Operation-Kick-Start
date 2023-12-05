@@ -6,10 +6,10 @@ import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:oks/contants.dart';
 import 'package:oks/views/edit_profile_view.dart';
-import 'package:oks/views/issue_histroy_view.dart';
 import 'package:oks/widgets/button_widget.dart';
 import 'package:oks/widgets/textfield_widget.dart';
 import 'package:intl/intl.dart';
+import 'main_view.dart';
 
 class ReportIssueView extends StatefulWidget {
   @override
@@ -70,7 +70,7 @@ class _ReportIssueViewState extends State<ReportIssueView> {
         ),
         SizedBox(height: 50.0,),
         ButtonWidget(buttonName: "Log Issue",width: 320, onTap: () => {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => IssueHistoryView()))
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MainView()))
         })
       ],
     );
