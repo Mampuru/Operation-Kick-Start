@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 class SignInController extends GetxController {
   var email = ''.obs;
   var password = ''.obs;
+  var name = ''.obs;
+
 
   void setEmail(String value) => email.value = value;
   void setPassword(String value) => password.value = value;
@@ -24,6 +26,19 @@ class SignInController extends GetxController {
       }
     } catch (e) {
       Get.snackbar('Error', 'An error occurred while logging in');
+    }
+  }
+
+  Future<void> signUp() async {
+    // Implement your sign logic here
+    // Example: Authenticate user with email and password
+    // Call API, validate credentials, etc.
+    try {
+      // Placeholder for logic logic
+      // Check if email and password are valid
+
+    } catch (e) {
+      Get.snackbar('Error', 'An error occurred while signing up');
     }
   }
 }
