@@ -4,12 +4,14 @@ class TextFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final String label;
   final bool? obscureText;
+  final Function onEditingComplete;
 
   const TextFieldWidget({
     Key? key,
     required this.controller,
     required this.label,
     this.obscureText,
+    this.onEditingComplete,
   }) : super(key: key);
 
   @override
@@ -20,6 +22,7 @@ class TextFieldWidget extends StatelessWidget {
     maxLines: obscureText != null ? 1:5,
     obscureText: obscureText != null ? true : false,
     controller: controller,
+    onChanged: onEditingComplete,
     style: TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.bold,
