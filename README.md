@@ -1,5 +1,7 @@
 # SB365 Mobile Application
 
+[![My Skills](https://skillicons.dev/icons?i=flutter,dart)](https://skillicons.dev)
+
 Service Buzz 365 Mobile application is built in flutter. 
 
 ## Features
