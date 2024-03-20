@@ -12,7 +12,7 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  var currentIndex = 0;
+  int currentIndex = 0;
   final screens = [
     HomeView(),
     Center(
@@ -78,33 +78,37 @@ class _MainViewState extends State<MainView> {
     return BottomNavigationBar(
       backgroundColor: White,
       currentIndex: currentIndex,
-      onTap: (index) => setState(() => currentIndex = index),
-      items: const <BottomNavigationBarItem>[
+      onTap: (index) {
+        setState(() {
+          currentIndex = index;
+        });
+      },
+      items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(
             Icons.home,
-            color: Black,
+            color: currentIndex == 0 ? Colors.black : Colors.grey,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.notifications_none_outlined,
-            color: Gray,
+            color: currentIndex == 1 ? Colors.black : Colors.grey,
           ),
           label: 'Notifications',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.payments_outlined,
-            color: Gray,
+            color: currentIndex == 2 ? Colors.black : Colors.grey,
           ),
           label: 'Bills',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.history,
-            color: Gray,
+            color: currentIndex == 3 ? Colors.black : Colors.grey,
           ),
           label: 'Issues log',
         ),
