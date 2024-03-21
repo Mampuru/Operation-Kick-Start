@@ -86,28 +86,28 @@ class _MainViewState extends State<MainView> {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.home,
+            currentIndex == 0 ? Icons.home : Icons.home_outlined,
             color: currentIndex == 0 ? Colors.black : Colors.grey,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.notifications_none_outlined,
+            currentIndex == 1 ? Icons.notifications : Icons.notifications_none_outlined,
             color: currentIndex == 1 ? Colors.black : Colors.grey,
           ),
           label: 'Notifications',
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.payments_outlined,
+            currentIndex == 2 ? Icons.payments : Icons.payments_outlined,
             color: currentIndex == 2 ? Colors.black : Colors.grey,
           ),
           label: 'Bills',
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.history,
+            currentIndex == 3 ? Icons.history : Icons.history_outlined,
             color: currentIndex == 3 ? Colors.black : Colors.grey,
           ),
           label: 'Issues log',
