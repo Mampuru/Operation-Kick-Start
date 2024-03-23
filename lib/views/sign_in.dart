@@ -69,58 +69,6 @@ class SignIn extends StatelessWidget {
                 ButtonWidget(
                   buttonName: "Sign Up",
                   onTap: () => {
-                    showDialog(
-                      barrierDismissible: false,
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Center(child: Text('Sign Up',style: TextStyle(fontWeight: FontWeight.bold),)),
-                          content: SizedBox(
-                            width: 500,
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: <Widget>[
-                                  TextFieldWidget(controller: name, label: 'Full Name',),
-                                  SizedBox(height: 10,),
-                                  TextFieldWidget(controller: email, label: 'Email',),
-                                  SizedBox(height: 10,),
-                                  TextFieldWidget(controller: password, label: 'Password',obscureText: true,),
-                                  SizedBox(height: 10,),
-                                  TextFieldWidget(controller: confirmPassword, label: 'Confirm Password',obscureText: true,),
-                                ],
-                              ),
-                            ),
-                          ),
-                          actions: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    minimumSize: Size(120, 50), // Set minimum button size (width, height)
-                                  ),
-                                  child: Text('Cancel',style: TextStyle(color: Colors.red)),
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    // Add your login logic here
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileInfo()));
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: PrimaryColor, // Set button color to red
-                                    minimumSize: Size(120, 50), // Set minimum button size (width, height)
-                                  ),
-                                  child: Text('Sign Up',style: TextStyle(color: White),),
-                                ),
-                              ],
-                            )
-                          ],
-                        );
-                      },
-                    )
                     // Navigator.push(context,
                     //     MaterialPageRoute(builder: (context) => ProfileInfo()))
                   },
