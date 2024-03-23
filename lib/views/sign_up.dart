@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oks/views/sign_in.dart';
 
 import '../contants.dart';
 import '../widgets/button_widget.dart';
@@ -75,6 +76,17 @@ class _SignUpViewState extends State<SignUpView> {
                     context,
                     MaterialPageRoute(builder: (context) => MainView()),
                   )
+                },
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              ButtonWidget(
+                buttonName: "Sign In",
+                buttonColor: White,
+                textColor: Black,
+                onTap: () => {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn()))
                 },
               ),
             ],
