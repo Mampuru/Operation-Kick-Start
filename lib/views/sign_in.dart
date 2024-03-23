@@ -24,7 +24,8 @@ class SignIn extends StatelessWidget {
               children: [
                 SizedBox(height: 40,),
                 SizedBox(
-                    height: 250, width: 200, child: Image.asset(LandingIconPath)),
+                    height: 200, width: 200, child: Image.asset(LandingIconPath)),
+                Text("Welcome to SB365",style: TextStyle(fontSize: 20),),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: TextFieldWidget(controller: email, label: 'Email',),
