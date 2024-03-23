@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oks/contants.dart';
 import 'package:oks/views/profile_info.dart';
+import 'package:oks/views/sign_up.dart';
 import 'package:oks/widgets/button_widget.dart';
 
 import '../widgets/textfield_widget.dart';
@@ -69,8 +70,8 @@ class SignIn extends StatelessWidget {
                 ButtonWidget(
                   buttonName: "Sign Up",
                   onTap: () => {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => ProfileInfo()))
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUpView()))
                   },
                 ),
                 SizedBox(
