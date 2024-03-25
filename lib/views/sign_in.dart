@@ -82,7 +82,10 @@ class SignIn extends StatelessWidget {
                   "App Version:",
                   style: TextStyle(color: PrimaryColor, fontSize: 10.0),
                 ),
-                AppVersion()
+                AppVersion(),
+                SizedBox(
+                  height: 10.0,
+                ),
               ],
             ),
           ),
